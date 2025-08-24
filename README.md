@@ -24,6 +24,46 @@ pip install uv
 3. Run `uv run python main.py` to execute the code
 4. Run `uv run pytest` to run tests (if available)
 
+## Virtual Environment Management
+
+Each topic has its own isolated virtual environment in `.venv/`:
+
+```
+topics/
+├── fizzbuzz/
+│   ├── .venv/          # Isolated Python environment for fizzbuzz
+│   ├── pyproject.toml
+│   └── main.py
+├── algorithms/
+│   ├── .venv/          # Separate environment for algorithms
+│   ├── pyproject.toml
+│   └── main.py
+```
+
+### Working with Virtual Environments
+
+**Automatic (Recommended):**
+```bash
+cd topics/your-topic/
+uv run python script.py    # Runs in topic's .venv automatically
+uv run pytest            # Runs tests in topic's .venv
+```
+
+**Manual Activation:**
+```bash
+cd topics/your-topic/
+uv shell                 # Activate the virtual environment
+python script.py         # Now using topic's Python/packages
+exit                     # Deactivate (or just close terminal)
+```
+
+**Environment Status:**
+```bash
+uv sync                  # Create/update .venv based on pyproject.toml
+uv pip list             # Show installed packages in current topic
+uv tree                 # Show dependency tree
+```
+
 ## Structure
 
 ```
@@ -63,14 +103,18 @@ git commit -m "Add new-topic implementation"
 - 🚀 **`QUICKSTART.md`** - Quick setup instructions  
 - 📋 **`GIT_GUIDE.md`** - Complete git workflow guide
 - 🔧 **`UV_INIT_GUIDE.md`** - Why we use `uv init --vcs none`
+- 🐍 **`VENV_GUIDE.md`** - Virtual environment management explained
 
 ## Commands Cheat Sheet
 
 ### uv (Python Environment)
 - `uv sync` - Create/update virtual environment
-- `uv add <package>` - Add dependency
+- `uv add <package>` - Add dependency to current topic
+- `uv remove <package>` - Remove dependency from current topic
 - `uv run <command>` - Run command in virtual environment
 - `uv shell` - Activate virtual environment shell
+- `uv pip list` - Show installed packages in current topic
+- `uv tree` - Show dependency tree for current topic
 
 ### Git (Version Control)
 - `git add .` - Stage all changes

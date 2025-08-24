@@ -46,14 +46,16 @@ git checkout -b topic/new-topic-name
 cd topics/
 uv init --app new-topic-name --vcs none
 cd new-topic-name/
-uv add --dev pytest
-uv sync
+uv add --dev pytest           # Add to THIS topic's environment
+uv sync                       # Create .venv/ for THIS topic
 
 # Work on your code...
 # When ready to save progress:
 git add .
 git commit -m "Initial implementation of new-topic-name"
 ```
+
+**Note:** Each topic's `.venv/` directory is automatically ignored by git (in `.gitignore`), but `pyproject.toml` and `uv.lock` are tracked to reproduce the environment.
 
 ### When Completing a Topic:
 ```bash
