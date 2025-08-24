@@ -1,0 +1,12 @@
+[core]
+    autocrlf = true
+    ignorecase = false
+
+[pull]
+    rebase = false
+
+[init]
+    defaultBranch = main
+
+[merge]
+    conflictstyle = diff3
