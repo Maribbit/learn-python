@@ -42,10 +42,17 @@ git log --oneline
 # Create and switch to a new branch
 git checkout -b topic/new-topic-name
 
+# Initialize the topic using uv
+cd topics/
+uv init --app new-topic-name --vcs none
+cd new-topic-name/
+uv add --dev pytest
+uv sync
+
 # Work on your code...
 # When ready to save progress:
 git add .
-git commit -m "Initial implementation of new-topic"
+git commit -m "Initial implementation of new-topic-name"
 ```
 
 ### When Completing a Topic:
@@ -92,9 +99,12 @@ git commit -m "WIP: working on algorithm optimization"
 ```bash
 # Start learning recursion
 git checkout -b topic/recursion
-cd topics/recursion
 
-# Set up environment
+# Initialize the topic with uv
+cd topics/
+uv init --app recursion --vcs none
+cd recursion/
+uv add --dev pytest
 uv sync
 
 # Code, test, repeat...

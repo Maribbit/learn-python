@@ -37,17 +37,32 @@ topics/
 
 ## Adding New Topics
 
+### Option 1: Use `uv init` (Recommended)
+```bash
+cd topics/
+uv init --app new-topic --vcs none
+cd new-topic/
+uv add --dev pytest  # Add testing support
+```
+
+### Option 2: Manual Setup
 1. Create a new directory under `topics/`
 2. Copy `pyproject.toml` template from existing topic
 3. Update the project name in `pyproject.toml`
 4. Add your Python files and README
-5. Use git to track your progress (see `GIT_GUIDE.md`)
+
+### Track with Git
+```bash
+git add .
+git commit -m "Add new-topic implementation"
+```
 
 ## Documentation
 
 - 📖 **`README.md`** - This file (main guide)
-- 🚀 **`QUICKSTART.md`** - Quick setup instructions
+- 🚀 **`QUICKSTART.md`** - Quick setup instructions  
 - 📋 **`GIT_GUIDE.md`** - Complete git workflow guide
+- 🔧 **`UV_INIT_GUIDE.md`** - Why we use `uv init --vcs none`
 
 ## Commands Cheat Sheet
 

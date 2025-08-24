@@ -24,15 +24,27 @@ git log --oneline
 ```
 
 ## 4. Create new topics
+
+### Easy way with `uv init`:
+```powershell
+cd topics
+uv init --app new-topic --vcs none
+cd new-topic
+uv add --dev pytest
+uv sync
+```
+
+### Manual way:
 1. Copy `pyproject.toml.template` to `topics\new-topic\pyproject.toml`
 2. Update project name in `pyproject.toml`
 3. Add your Python files
 4. Run `uv sync` to set up the environment
-5. Use git to track your progress:
-   ```powershell
-   git add .
-   git commit -m "Add new-topic implementation"
-   ```
+
+### Track progress:
+```powershell
+git add .
+git commit -m "Add new-topic implementation"
+```
 
 ## 📚 More Help
 - **Complete setup**: See `README.md`
