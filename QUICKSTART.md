@@ -28,9 +28,9 @@ Each topic gets its own `.venv/` directory:
 uv pip list
 
 # Manually activate environment (optional)
-uv shell
-python main.py    # Now using topic's environment
-exit              # Deactivate
+.venv\Scripts\Activate.ps1      # Windows
+python main.py                  # Now using topic's environment
+deactivate                      # Deactivate
 ```
 
 ## 3. Check git setup

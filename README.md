@@ -52,9 +52,11 @@ uv run pytest            # Runs tests in topic's .venv
 **Manual Activation:**
 ```bash
 cd topics/your-topic/
-uv shell                 # Activate the virtual environment
-python script.py         # Now using topic's Python/packages
-exit                     # Deactivate (or just close terminal)
+source .venv/bin/activate       # Linux/Mac
+# OR
+.venv\Scripts\Activate.ps1      # Windows PowerShell
+python script.py               # Now using topic's Python/packages
+deactivate                     # Deactivate
 ```
 
 **Environment Status:**
@@ -112,7 +114,6 @@ git commit -m "Add new-topic implementation"
 - `uv add <package>` - Add dependency to current topic
 - `uv remove <package>` - Remove dependency from current topic
 - `uv run <command>` - Run command in virtual environment
-- `uv shell` - Activate virtual environment shell
 - `uv pip list` - Show installed packages in current topic
 - `uv tree` - Show dependency tree for current topic
 

@@ -55,14 +55,19 @@ uv run pip list               # ✅ Shows topic's packages
 
 ```bash
 cd topics/any-topic/
-uv shell                      # Activate this topic's environment
+
+# Windows PowerShell
+.venv\Scripts\Activate.ps1
+
+# Linux/Mac
+source .venv/bin/activate
 
 # Now you're "inside" the virtual environment
 python script.py              # Uses topic's Python
 pip list                      # Shows topic's packages
 which python                  # Shows path to topic's Python
 
-exit                          # Deactivate (return to system)
+deactivate                    # Deactivate (return to system)
 ```
 
 ### Environment Management
